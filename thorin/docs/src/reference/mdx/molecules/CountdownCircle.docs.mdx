@@ -1,0 +1,41 @@
+---
+title: CountdownCircle
+description: Element for counting down time
+---
+
+```tsx
+import { CountdownCircle } from '@ensdomains/thorin'
+```
+
+```tsx expand=true live=true
+<CountdownCircle countdownSeconds={30} />
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Colors
+
+```tsx expand=true live=true
+<DeleteMe flexDirection="row">
+  <CountdownCircle color="blue" countdownSeconds={30} />
+  <CountdownCircle color="green" countdownSeconds={30} />
+  <CountdownCircle color="indigo" countdownSeconds={30} />
+</DeleteMe>
+```
+
+## Sizes
+
+```tsx expand=true live=true
+<DeleteMe flexDirection="row">
+  <CountdownCircle countdownSeconds={30} size="small" />
+  <CountdownCircle countdownSeconds={30} size="large" />
+</DeleteMe>
+```
+
+## Disabled
+
+```tsx expand=true live=true
+<CountdownCircle countdownSeconds={30} disabled />
+```

@@ -1,0 +1,371 @@
+---
+title: Select
+description: Select element input
+---
+
+```tsx
+import { CopySVG, EthSVG, FlagSVG, MoonSVG, Select } from '@ensdomains/thorin'
+```
+
+```tsx live=true expand=true minHeight=350px
+<Card>
+  <Select
+    autocomplete
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+      { value: '3', label: 'Three', prefix: <MoonSVG /> },
+      {
+        value: '4',
+        label: 'Four',
+        prefix: <CopySVG />,
+        disabled: true,
+      },
+      { value: '5', label: 'Four', prefix: <CopySVG /> },
+    ]}
+    placeholder="Select an option..."
+    tabIndex="2"
+  />
+</Card>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Option Props
+
+<PropsTable
+  types={{
+    value: {
+      name: 'value',
+      description: 'The value of the option.',
+      required: true,
+      type: {
+        raw: 'string',
+      },
+    },
+    label: {
+      name: 'label',
+      description: 'The human readable text for the option.',
+      type: {
+        raw: 'string',
+      },
+    },
+    node: {
+      name: 'node',
+      description:
+        'A react node that acts as the label as an alternative to the label prop.',
+      type: {
+        raw: 'ReactNode',
+      },
+    },
+    prefix: {
+      name: 'prefix',
+      description: 'The text or component inserted before the label.',
+      type: {
+        raw: 'ReactNode',
+      },
+    },
+    disabled: {
+      name: 'disabled',
+      description: 'If true, prevents user interaction with option.',
+      type: {
+        raw: 'boolean',
+      },
+    },
+    color: {
+      name: 'color',
+      description: 'The color of the option.',
+      type: {
+        raw: 'Colors',
+      },
+    },
+  }}
+/>
+
+## Show Dot
+
+```tsx live=true expand=true minHeight=350px
+<DeleteMe>
+  <Select
+    description="Select with placeholder"
+    label="Placeholder"
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+      { value: '3', label: 'Three', prefix: <MoonSVG /> },
+      { value: '4', label: 'Four', prefix: <CopySVG />, disabled: true },
+    ]}
+    placeholder="Select option..."
+    showDot
+  />
+  <Select
+    description="Select with placeholder"
+    label="Validated"
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+      { value: '3', label: 'Three', prefix: <MoonSVG /> },
+      { value: '4', label: 'Four', prefix: <CopySVG />, disabled: true },
+    ]}
+    placeholder="Select option..."
+    showDot
+    validated
+    value="2"
+  />
+  <Select
+    description="Select with placeholder"
+    error="Error message"
+    label="Error"
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+      { value: '3', label: 'Three', prefix: <MoonSVG /> },
+      { value: '4', label: 'Four', prefix: <CopySVG />, disabled: true },
+    ]}
+    placeholder="Select option..."
+    showDot
+  />
+  <Select
+    description="Select with placeholder"
+    disabled
+    label="Disabled"
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+      { value: '3', label: 'Three', prefix: <MoonSVG /> },
+      { value: '4', label: 'Four', prefix: <CopySVG />, disabled: true },
+    ]}
+    placeholder="Select option..."
+    showDot
+  />
+</DeleteMe>
+```
+
+## Align
+
+```tsx live=true expand=true minHeight=350px
+<DeleteMe flexDirection="row" justifyContent="space-between">
+  <div>
+    <Select
+      align="left"
+      label="Label text"
+      options={[
+        { value: '0', label: 'Zero' },
+        { value: '1', label: 'One', prefix: <EthSVG /> },
+        { value: '2', label: 'Two', prefix: <WalletSVG /> },
+        { value: '3', label: 'Three', prefix: <MoonSVG /> },
+        { value: '4', label: 'Four', prefix: <CopySVG />, disabled: true },
+      ]}
+    />
+  </div>
+  <div>
+    <Select
+      align="right"
+      label="Label text"
+      options={[
+        { value: '0', label: 'Zero' },
+        { value: '1', label: 'One', prefix: <EthSVG /> },
+        { value: '2', label: 'Two', prefix: <WalletSVG /> },
+        { value: '3', label: 'Three', prefix: <MoonSVG /> },
+        { value: '4', label: 'Four', prefix: <CopySVG />, disabled: true },
+      ]}
+    />
+  </div>
+</DeleteMe>
+```
+
+## Size
+
+```tsx live=true expand=true minHeight=350px
+<DeleteMe>
+  <Select
+    label="Small"
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+    ]}
+    size="small"
+  />
+  <Select
+    label="Medium"
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+    ]}
+    size="medium"
+  />
+</DeleteMe>
+```
+
+## Disabled
+
+```tsx live=true expand=true minHeight=350px
+<Card>
+  <Select
+    disabled
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+      { value: '3', label: 'Three', prefix: <MoonSVG /> },
+      { value: '4', label: 'Four', prefix: <CopySVG />, disabled: true },
+    ]}
+    selected={{ value: '1', label: 'One', prefix: <EthSVG /> }}
+  />
+</Card>
+```
+
+## Autocomplete
+
+```tsx live=true expand=true minHeight=350px
+<Card>
+  <Select
+    autocomplete
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+      { value: '3', label: 'Three', prefix: <MoonSVG />, color: 'redPrimary' },
+      { value: '4', label: 'Four', prefix: <CopySVG />, disabled: true },
+    ]}
+    selected={{ value: '1', label: 'One', prefix: <EthSVG /> }}
+  />
+</Card>
+```
+
+## Createable
+
+```tsx live=true expand=true minHeight=350px
+<>
+  <Card>
+    <Select
+      createable
+      options={[
+        { value: '0', label: 'Zero' },
+        { value: '1', label: 'One', prefix: <EthSVG /> },
+        { value: '2', label: 'Two', prefix: <WalletSVG /> },
+        { value: '3', label: 'Three', prefix: <MoonSVG /> },
+        { value: '4', label: 'Four', prefix: <CopySVG />, disabled: true },
+      ]}
+    />
+  </Card>
+</>
+```
+
+## Rows
+
+```tsx live=true expand=true minHeight=350px
+<Card>
+  <Select
+    autocomplete
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+      { value: '3', label: 'Three', prefix: <MoonSVG /> },
+      {
+        value: '4',
+        label: 'Four',
+        prefix: <CopySVG />,
+        disabled: true,
+      },
+      { value: '5', label: 'Four', prefix: <CopySVG /> },
+    ]}
+    rows={3}
+    tabIndex="2"
+  />
+</Card>
+```
+
+## Direction
+
+```tsx live=true expand=true minHeight=350px
+<DeleteMe>
+  <div style={{ height: '200px' }} />
+
+  <Select
+    createable
+    direction="up"
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+      { value: '3', label: 'Three', prefix: <MoonSVG /> },
+      {
+        value: '4',
+        label: 'Four',
+        prefix: <CopySVG />,
+        disabled: true,
+      },
+      { value: '5', label: 'Four', prefix: <CopySVG /> },
+    ]}
+    tabIndex="2"
+  />
+</DeleteMe>
+```
+
+## InputSize
+
+```tsx live=true expand=true minHeight=350px
+<DeleteMe flexDirection="row" justifyContent="flex-start">
+  <div>
+    <Select
+      createable
+      inputSize={{
+        min: 5,
+        max: 20,
+      }}
+      options={[
+        { value: '0', label: 'Zero' },
+        { value: '1', label: 'One', prefix: <EthSVG /> },
+        { value: '2', label: 'Two', prefix: <WalletSVG /> },
+        { value: '3', label: 'Three', prefix: <MoonSVG /> },
+        {
+          value: '4',
+          label: 'Four',
+          prefix: <CopySVG />,
+          disabled: true,
+        },
+        { value: '5', label: 'Four', prefix: <CopySVG /> },
+      ]}
+      rows={3}
+      tabIndex="2"
+    />
+  </div>
+</DeleteMe>
+```
+
+## Read Only
+
+```tsx live=true expand=true minHeight=350px
+<DeleteMe>
+  <Select
+    createable
+    options={[
+      { value: '0', label: 'Zero' },
+      { value: '1', label: 'One', prefix: <EthSVG /> },
+      { value: '2', label: 'Two', prefix: <WalletSVG /> },
+      { value: '3', label: 'Three', prefix: <MoonSVG /> },
+      {
+        value: '4',
+        label: 'Four',
+        prefix: <CopySVG />,
+        disabled: true,
+      },
+      { value: '5', label: 'Four', prefix: <CopySVG /> },
+    ]}
+    readOnly
+    tabIndex="2"
+    value="1"
+  />
+</DeleteMe>
+```

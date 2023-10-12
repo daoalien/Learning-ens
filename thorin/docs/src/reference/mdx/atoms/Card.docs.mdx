@@ -1,0 +1,59 @@
+---
+title: Card
+description: Styled wrapper for content
+---
+
+```tsx
+import { Card } from '@ensdomains/thorin'
+```
+
+```tsx live=true expand=true backgroundColor=foregroundTertiary
+<Card>
+  <Heading>Hello World</Heading>
+  <Typography>The quick brown fox…</Typography>
+</Card>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Variants
+
+```tsx live=true
+<DeleteMe>
+  <Card title="Heading">
+    <Typography>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Typography>
+    <Typography>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Typography>
+  </Card>
+  <Card>
+    <Typography>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Typography>
+    <Typography>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Typography>
+  </Card>
+</DeleteMe>
+```
+
+## Divider
+
+```tsx live=true
+<DeleteMe>
+  <Card divider title="Heading" variant="desktop">
+    <Card.Divider />
+    <Typography>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Typography>
+    <Card.Divider />
+    <Typography>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </Typography>
+  </Card>
+</DeleteMe>
+```

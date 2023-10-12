@@ -1,0 +1,164 @@
+---
+title: Textarea
+description: Surface for accepting multi-line user input
+---
+
+```tsx
+import { Textarea } from '@ensdomains/thorin'
+```
+
+```tsx live=true expand=true
+<Textarea
+  label="Why are you entering $WRITE Race?"
+  placeholder="Share your story…"
+/>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Sizes
+
+```tsx live=true
+<DeleteMe>
+  <Textarea label="Medium" placeholder="Enter text here..." size="medium" />
+  <Textarea label="Small" placeholder="Enter text here..." size="small" />
+</DeleteMe>
+```
+
+## Show Dot
+
+```tsx live=true
+<DeleteMe>
+  <Textarea
+    description="Textarea with showDot"
+    label="Placeholder"
+    placeholder="Share your story…"
+    showDot
+  />
+  <Textarea
+    description="Textarea with showDot and validated"
+    label="Validated"
+    placeholder="Share your story…"
+    showDot
+    validated
+  />
+  <Textarea
+    description="Textarea with showDot and error"
+    error="Error message"
+    label="Error"
+    placeholder="Share your story…"
+    showDot
+    validated
+  />
+  <Textarea
+    description="Textarea that is disabled"
+    disabled
+    label="Disabled"
+    placeholder="Share your story…"
+    showDot
+    validated
+  />
+</DeleteMe>
+```
+
+## Clearable
+
+```tsx live=true
+<DeleteMe>
+  <Textarea
+    clearable
+    defaultValue="This textarea can be cleared by clicking the clear button."
+    label="Clearable"
+    placeholder="Share your story…"
+  />
+  <Textarea
+    clearable={false}
+    defaultValue="This textarea can be cleared by clicking the clear button."
+    label="Not clearable"
+    placeholder="Share your story…"
+  />
+</DeleteMe>
+```
+
+## Read Only
+
+```tsx live=true
+<Textarea
+  defaultValue="This is a read only textarea. You can focus on the textarea but you can not enter text."
+  label="Read only"
+  placeholder="Share your story…"
+  readOnly
+/>
+```
+
+## Rows
+
+```tsx live=true
+<Textarea
+  defaultValue="This is a textarea whose rows property has been set to two. This textarea will only be centered on two rows when it appears, even if there are more than two rows."
+  label="2 rows"
+  placeholder="Share your story…"
+  rows={2}
+/>
+```
+
+## Description
+
+```tsx live=true
+<Textarea
+  description="Pitch to community members for votes!"
+  label="Why are you entering $WRITE Race?"
+  placeholder="Share your story…"
+/>
+```
+
+## ReadOnly
+
+```tsx live=true
+<Textarea
+  hideLabel
+  label="Read only"
+  readOnly
+  value="This is some read only text"
+/>
+```
+
+## Error
+
+```tsx live=true
+<Textarea
+  error="Prompt is required"
+  label="Why are you entering $WRITE Race?"
+  placeholder="Share your story…"
+/>
+```
+
+## Hide Label
+
+```tsx live=true
+<Textarea
+  hideLabel
+  label="Why are you entering $WRITE Race?"
+  placeholder="Share your story…"
+/>
+```
+
+## Max Length
+
+```tsx live=true
+<Textarea
+  defaultValue="This textarea can hold a maximum of 100 characters."
+  hideLabel
+  label="Max length"
+  maxLength={100}
+  placeholder="Share your story…"
+/>
+```
+
+## AlwaysShowAction
+
+```tsx live=true
+<Textarea alwaysShowAction clearable hideLabel label="Always show action" />
+```

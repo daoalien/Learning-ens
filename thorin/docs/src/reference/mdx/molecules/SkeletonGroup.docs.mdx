@@ -1,0 +1,29 @@
+---
+title: SkeletonGroup
+description: Manages loading state for multiple skeletons
+---
+
+```tsx
+import { SkeletonGroup } from '@ensdomains/thorin'
+```
+
+```tsx live=true
+<DeleteMe>
+  <SkeletonGroup loading={getState('loading')}>
+    <Skeleton>
+      <Heading level="1">Foo Bar Baz</Heading>
+    </Skeleton>
+    <Skeleton>
+      <Typography>The quick brown fox jumped over the lazy dogs.</Typography>
+    </Skeleton>
+  </SkeletonGroup>
+  <VisuallyHidden>{setDefaultState('loading', true)}</VisuallyHidden>
+  <Button size="small" onClick={() => toggleState('loading')}>
+    Toggle Skeleton Group
+  </Button>
+</DeleteMe>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />

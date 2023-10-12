@@ -1,0 +1,298 @@
+---
+title: Dropdown
+description: Attaches a button menu to an element
+---
+
+```tsx
+import { Dropdown } from '@ensdomains/thorin'
+```
+
+```tsx live=true  expand=ture minHeight=300px
+<Dropdown
+  align="left"
+  items={[
+    {
+      label: 'Dashboard',
+      onClick: () => null,
+      color: 'text',
+      icon: <DotGridSVG />,
+    },
+    {
+      label: 'Disconnect',
+      onClick: () => null,
+      color: 'red',
+      icon: <ExitSVG />,
+    },
+  ]}
+  label="Account"
+/>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Dropdown Item Props
+
+<PropsTable
+  types={{
+    label: {
+      name: 'label',
+      description: 'The text label.',
+      type: {
+        raw: 'string',
+      },
+    },
+    color: {
+      name: 'color',
+      description: 'The color of the label.',
+      type: {
+        raw: '"blue" | "green" | "indigo" | "orange" | "pink" | "purple" | "red" | "teal" | "yellow" | "grey" | "accent" | "accentSecondary" | "accentSecondaryHover" | "accentTertiary" | "accentText" | "accentGradient" | "background" | "backgroundHide" | "backgroundSecondary" | "backgroundTertiary" | "border" | "borderSecondary" | "borderTertiary" | "foreground" | "foregroundSecondary" | "foregroundSecondaryHover" | "foregroundTertiary" | "groupBackground" | "groupBorder" | "gradients" | "text" | "textPlaceholder" | "textSecondary" | "textTertiary"',
+      },
+    },
+    disabled: {
+      name: 'disabled',
+      description: 'The disabled attribute of button element.',
+      type: {
+        raw: 'boolean',
+      },
+    },
+    onClick: {
+      name: 'onClick',
+      description: 'An event handler for click events.',
+      type: {
+        raw: '() => void',
+      },
+    },
+    showIndicator: {
+      name: 'showIndicator',
+      description: 'A dot indicator.',
+      type: {
+        raw: 'boolean | Colors',
+      },
+    },
+    icon: {
+      name: 'icon',
+      description: 'An icon that leads the label.',
+      type: {
+        raw: 'ReactNode'
+      }
+    }
+  
+  }}
+/>
+
+## Direction
+
+```tsx live=true expand=true minHeight=300px
+<>
+  <div style={{ height: '300px' }} />
+  <Dropdown
+    direction="up"
+    items={[
+      { label: 'Dashboard', onClick: () => null, color: 'text' },
+      { label: 'Disconnect', onClick: () => null, color: 'red' },
+    ]}
+    label="Account"
+  />
+</>
+```
+
+## Align
+
+```tsx live=true expand=true minHeight=300px
+<DeleteMe flexDirection="row" justifyContent="space-between">
+  <Dropdown
+    align="left"
+    items={[
+      { label: 'Text Label 1', onClick: () => null },
+      { label: 'Text Label 2', onClick: () => null },
+      { label: 'Text Label 3', onClick: () => null },
+      { label: 'Text Label 4', onClick: () => null },
+    ]}
+    label="Left"
+  />
+  <Dropdown
+    align="right"
+    items={[
+      { label: 'Text Label 1', onClick: () => null },
+      { label: 'Text Label 2', onClick: () => null },
+      { label: 'Text Label 3', onClick: () => null },
+      { label: 'Text Label 4', onClick: () => null },
+    ]}
+    label="Right"
+  />
+</DeleteMe>
+```
+
+## Short Throw
+
+```tsx live=true expand=true minHeight=300px
+<DeleteMe flexDirection="row" justifyContent="space-between">
+  <Dropdown
+    align="left"
+    items={[
+      { label: 'Text Label 1', onClick: () => null },
+      { label: 'Text Label 2', onClick: () => null },
+      { label: 'Text Label 3', onClick: () => null },
+      { label: 'Text Label 4', onClick: () => null },
+    ]}
+    label="Regular Throw"
+  />
+  <Dropdown
+    align="right"
+    items={[
+      { label: 'Text Label 1', onClick: () => null },
+      { label: 'Text Label 2', onClick: () => null },
+      { label: 'Text Label 3', onClick: () => null },
+      { label: 'Text Label 4', onClick: () => null },
+    ]}
+    label="Short Throw"
+    shortThrow
+  />
+</DeleteMe>
+```
+
+## Scrollable
+
+```tsx live=true expand=true minHeight=300px
+<Dropdown
+  height={200}
+  items={[
+    { label: 'Text Label 1', onClick: () => null },
+    { label: 'Text Label 2', onClick: () => null },
+    { label: 'Text Label 3', onClick: () => null },
+    { label: 'Text Label 4', onClick: () => null },
+    { label: 'Text Label 5', onClick: () => null },
+    { label: 'Text Label 6', onClick: () => null },
+    { label: 'Text Label 7', onClick: () => null },
+    { label: 'Text Label 8', onClick: () => null },
+  ]}
+  label="Scrollable"
+/>
+```
+
+## Item with Indicator
+
+```tsx live=true  expand=ture minHeight=300px
+<Dropdown
+  align="left"
+  items={[
+    {
+      label: 'None',
+      onClick: () => null,
+      color: 'text',
+      icon: <DotGridSVG />,
+    },
+    {
+      label: 'Default',
+      onClick: () => null,
+      color: 'text',
+      icon: <CogSVG />,
+      showIndicator: true,
+    },
+    {
+      label: 'Custom',
+      onClick: () => null,
+      color: 'red',
+      icon: <ExitSVG />,
+      showIndicator: 'red',
+    },
+  ]}
+  label="Account"
+  width={200}
+/>
+```
+
+## Custom Indicator Colour
+
+```tsx live=true  expand=ture minHeight=300px
+<Dropdown
+  align="left"
+  indicatorColor="red"
+  items={[
+    {
+      label: 'None',
+      onClick: () => null,
+      color: 'text',
+      icon: <DotGridSVG />,
+    },
+    {
+      label: 'Default',
+      onClick: () => null,
+      color: 'text',
+      icon: <CogSVG />,
+      showIndicator: true,
+    },
+    {
+      label: 'Custom',
+      onClick: () => null,
+      color: 'red',
+      icon: <ExitSVG />,
+      showIndicator: 'red',
+    },
+  ]}
+  label="Account"
+  width={200}
+/>
+```
+
+## Custom button
+
+```tsx live=true expand=true minHeight=300px
+<Dropdown
+  items={[
+    { label: 'English', onClick: () => null, color: 'text' },
+    { label: '简体中文', onClick: () => null, color: 'text' },
+    { label: 'Français', onClick: () => null, color: 'text' },
+    { label: 'Español', onClick: () => null, color: 'text' },
+  ]}
+  label="Language"
+>
+  <button>Custom button</button>
+</Dropdown>
+```
+
+## Custom menu button
+
+```tsx live=true expand=true minHeight=300px
+<Dropdown
+  items={[
+    <Button
+      key="item1"
+      prefix={<PlusSVG />}
+      shadowless
+      size="small"
+      tone="accent"
+    >
+      Item1
+    </Button>,
+    <Button key="item2" prefix={<PlusSVG />} shadowless size="small" tone="red">
+      Item2
+    </Button>,
+  ]}
+  label="Custom"
+/>
+```
+
+## Items with icons
+
+```tsx live=true minHeight=300px
+<Dropdown
+  items={[
+    {
+      label: 'None',
+      onClick: () => null,
+      color: 'text',
+      icon: <DotGridSVG />,
+    },
+    {
+      label: 'Default',
+      onClick: () => null,
+      color: 'text',
+      icon: <CogSVG />,
+    },
+  ]}
+  label="Custom"
+/>
+```

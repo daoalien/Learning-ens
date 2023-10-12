@@ -1,0 +1,136 @@
+---
+title: Avatar
+description: An image that represents an entity
+---
+
+```tsx
+import { Avatar } from '@ensdomains/thorin'
+```
+
+```tsx live=true expand=true
+<div style={{ maxWidth: '50px' }}>
+  <Avatar label="Noun 97" src={avatars.noun97} />
+</div>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Sizes
+
+The size of the avatar is controlled by the width of it's parent component.
+
+```tsx live=true
+<DeleteMe alignItems="center" flexDirection="row" flexWrap="wrap">
+  <div style={{ width: '100px' }}>
+    <Avatar label="Noun 97" src={avatars.noun97} />
+  </div>
+  <div style={{ width: '75px' }}>
+    <Avatar label="Noun 97" src={avatars.noun97} />
+  </div>
+  <div style={{ width: '50px' }}>
+    <Avatar label="Noun 97" src={avatars.noun97} />
+  </div>
+  <div style={{ width: '25px' }}>
+    <Avatar label="Noun 97" src={avatars.noun97} />
+  </div>
+</DeleteMe>
+```
+
+## Placeholder
+
+The placeholder is shown if the src property is undefined or if an error occurs loading the src.
+
+```tsx live=true
+<DeleteMe alignItems="center" flexDirection="row" flexWrap="wrap">
+  <Typography variant="label">undefined src</Typography>
+  <div style={{ width: '100px' }}>
+    <Avatar />
+  </div>
+  <Typography variant="label">broken Link</Typography>
+  <div style={{ width: '100px' }}>
+    <Avatar src="http://thisisa.com/brockenLink.jpg" />
+  </div>
+</DeleteMe>
+```
+
+## Shapes
+
+```tsx live=true
+<DeleteMe alignItems="center" flexDirection="row" flexWrap="wrap">
+  <div style={{ width: '100px' }}>
+    <Avatar label="Noun 97 circle" shape="circle" src={avatars.noun97} />
+  </div>
+  <div style={{ width: '100px' }}>
+    <Avatar label="Noun 97 square" shape="square" src={avatars.noun97} />
+  </div>
+</DeleteMe>
+```
+
+## Overlay
+
+```tsx live=true
+<DeleteMe alignItems="center" flexDirection="row" flexWrap="wrap">
+  <div style={{ width: '100px' }}>
+    <Avatar
+      label="Noun 97"
+      overlay={<div style={{ background: 'rgba(0,0,0,0.25)', zIndex: 1 }} />}
+      src={avatars.noun97}
+    />
+  </div>
+</DeleteMe>
+```
+
+## Border
+
+By default, there is a light border around the edge to define image edges on similarly colored backgrounds. This can be disabled by using the `noBorder` prop.
+
+```tsx live=true
+<DeleteMe flexDirection="row">
+  <div style={{ width: '100px' }}>
+    <Avatar
+      src={
+        mode === 'light'
+          ? 'https://images.mirror-media.xyz/publication-images/152cd86f-45ad-4f48-8971-4dd33fde5bc1.png'
+          : 'https://images.mirror-media.xyz/publication-images/5eaba6b2-b9ee-4bea-aeac-75796d53798f.jpg'
+      }
+    />
+  </div>
+  <div style={{ width: '100px' }}>
+    <Avatar
+      noBorder
+      src={
+        mode === 'light'
+          ? 'https://images.mirror-media.xyz/publication-images/152cd86f-45ad-4f48-8971-4dd33fde5bc1.png'
+          : 'https://images.mirror-media.xyz/publication-images/5eaba6b2-b9ee-4bea-aeac-75796d53798f.jpg'
+      }
+    />
+  </div>
+</DeleteMe>
+```
+
+## Disabled
+
+The placeholder is shown if the src property is undefined or if an error occurs loading the src.
+
+```tsx live=true
+<DeleteMe alignItems="center" flexDirection="row" flexWrap="wrap">
+  <Typography variant="label">Placeholder</Typography>
+  <div style={{ width: '100px' }}>
+    <Avatar disabled />
+  </div>
+  <Typography variant="label">Avatar</Typography>
+  <div style={{ width: '100px' }}>
+    <Avatar disabled src={avatars.noun97} />
+  </div>
+</DeleteMe>
+```
+
+<!-- ## next/image
+
+If you are using Next.js and configured [`next/image`](https://nextjs.org/docs/api-reference/next/image) appropriately, you can pass it in with the `as` prop.
+
+```tsx live=true expand=true
+<Avatar as={NextImage} label="Noun 97" src={avatars.noun97} />
+``` -->
